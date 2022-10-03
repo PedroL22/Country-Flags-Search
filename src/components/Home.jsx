@@ -12,11 +12,25 @@ export default function Home() {
 
   return (
     <div>
-      <div className="grid grid-flow-row grid-cols-5 ">
+      <div className="grid grid-cols-4 ">
         {api.map((country) => (
-          <div key={country.name?.official} className="">
-            <img src={country.flags.png} alt={country.name.common} />
-            <p className="bg-gray-500 m-10">{country?.name?.common}</p>
+          <div key={country.name?.official} className="bg-white shadow-md m-4">
+            <img
+              src={country.flags.png}
+              alt={country.name.common}
+              className="object-cover h-[13rem] "
+            />
+            <div className="m-4">
+              <p className="font-medium text-lg mb-2">{country.name.common}</p>
+              <div className="flex text-gray-700">
+                <p className="font-medium mr-1">Population:</p>
+                <p className="">{country.population}</p>
+              </div>
+              <div className="flex text-gray-700">
+                <p className="font-medium mr-1">Region:</p>
+                <p className="">{country.continents}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>

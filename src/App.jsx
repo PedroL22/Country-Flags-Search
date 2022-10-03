@@ -3,8 +3,10 @@ import Home from './components/Home';
 
 function App() {
   return (
-    <div className="">
-      <Home />
+    <div className="bg-gray-200">
+      <div className="max-w-screen-xl mx-auto">
+        <Home />
+      </div>
     </div>
   );
 }
