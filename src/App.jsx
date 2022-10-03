@@ -1,12 +1,12 @@
 import React from 'react';
 import Home from './components/Home';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="bg-gray-200">
-      <div className="xl:max-w-screen-xl mx-auto">
-        <Home />
-      </div>
+      <NavBar />
+      <Home />
     </div>
   );
 }

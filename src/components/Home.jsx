@@ -11,8 +11,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+    <div className="xl:max-w-screen-xl mx-auto">
+      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-20">
         {api.map((country) => (
           <div key={country.name?.official} className="bg-white shadow-md m-4">
             <img
@@ -29,6 +29,10 @@ export default function Home() {
               <div className="flex text-gray-700">
                 <p className="font-medium mr-1">Region:</p>
                 <p className="">{country.continents}</p>
+              </div>
+              <div className="flex text-gray-700">
+                <p className="font-medium mr-1">Capital:</p>
+                <p className="">{country.capital}</p>
               </div>
             </div>
           </div>
