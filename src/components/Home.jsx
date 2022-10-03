@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="grid grid-cols-4 ">
+      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
         {api.map((country) => (
           <div key={country.name?.official} className="bg-white shadow-md m-4">
             <img
