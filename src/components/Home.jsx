@@ -12,7 +12,15 @@ export default function Home() {
 
   return (
     <div className="xl:max-w-screen-xl mx-auto">
-      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-20">
+      <div className="xl:ml-4 pt-20">
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          className="flex xl:mx-0 mx-auto py-4 pl-4 pr-36 rounded-lg outline-0 border border-gray-200 focus:border focus:border-gray-400 text-gray-500"
+        />
+      </div>
+
+      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4">
         {api.map((country) => (
           <div key={country.name?.official} className="bg-white shadow-md m-4">
             <img
