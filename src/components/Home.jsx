@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <div className="xl:max-w-screen-xl mx-auto">
+    <div className="xl:max-w-screen-xl mx-auto min-h-screen">
       <div className="xl:ml-4 pt-20">
         <input
           type="text"
@@ -40,12 +40,15 @@ export default function Home() {
           onChange={(e) => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
-          className="flex xl:mx-0 mx-auto py-4 pl-4 pr-36 rounded-lg outline-0 border border-gray-200 focus:border focus:border-gray-400 text-gray-500"
+          className="flex xl:mx-0 mx-auto py-4 pl-4 pr-36 rounded-lg outline-0 border border-gray-200 focus:border focus:border-gray-400 text-gray-500 dark:bg-gray-700 dark:border-gray-800 dark:focus:border-gray-500 dark:text-gray-300 dark:focus:text-gray-300"
         />
       </div>
       <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4">
         {api.map((country) => (
-          <div key={country?.fifa} className="bg-white shadow-md m-4">
+          <div
+            key={country?.fifa}
+            className="bg-white dark:bg-gray-700 dark:text-white shadow-md m-4"
+          >
             <img
               src={country?.flags?.png}
               alt={country?.name?.common}
@@ -53,15 +56,15 @@ export default function Home() {
             />
             <div className="m-4">
               <p className="font-medium text-lg mb-2">{country?.name?.common}</p>
-              <div className="flex text-gray-700">
+              <div className="flex text-gray-700 dark:text-white">
                 <p className="font-medium mr-1">Population:</p>
                 <p className="">{country?.population?.toLocaleString('en-US')}</p>
               </div>
-              <div className="flex text-gray-700">
+              <div className="flex text-gray-700 dark:text-white">
                 <p className="font-medium mr-1">Region:</p>
                 <p className="">{country?.continents}</p>
               </div>
-              <div className="flex text-gray-700">
+              <div className="flex text-gray-700 dark:text-white">
                 <p className="font-medium mr-1">Capital:</p>
                 <p className="">{country?.capital}</p>
               </div>
