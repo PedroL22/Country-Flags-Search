@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { useTheme } from '../hooks/useTheme';
 
 export default function NavBar() {
@@ -12,19 +13,16 @@ export default function NavBar() {
         </a>
         <a href="" className="flex my-auto">
           {theme === 'light' ? (
-            <h1
+            <BsFillMoonFill
               onClick={() => setTheme('dark')}
               className="font-medium text-xl ease-in transition-all duration-75"
-            >
-              Dark Mode
-            </h1>
+            />
           ) : (
-            <h1
+            <BsSunFill
               onClick={() => setTheme('light')}
+              size={25}
               className="font-medium text-xl ease-in transition-all duration-75"
-            >
-              Light Mode
-            </h1>
+            />
           )}
         </a>
       </nav>
