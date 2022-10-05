@@ -7,7 +7,9 @@ import ThemeContextProvider from './hooks/useTheme';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeContextProvider>
-      <App />
+      <div className="bg-gray-200 dark:bg-gray-800 ease-in transition-all duration-75">
+        <App />
+      </div>
     </ThemeContextProvider>
   </React.StrictMode>,
 );

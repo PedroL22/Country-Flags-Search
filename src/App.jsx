@@ -1,13 +1,20 @@
 import React from 'react';
-import Home from './components/Home';
+import {
+  BrowserRouter, Routes, Route, useParams,
+} from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Home from './components/Home';
+import Country from './components/Country';
 
 function App() {
   return (
-    <div className="bg-gray-200 dark:bg-gray-800 ease-in transition-all duration-75">
+    <BrowserRouter>
       <NavBar />
-      <Home />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="country/:cca2" element={<Country />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
