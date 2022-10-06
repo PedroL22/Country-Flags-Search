@@ -52,7 +52,7 @@ export default function Home() {
       <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4">
         {api.length > 2
           && api.map((country) => (
-            <Link to={`country/${country?.cca2}`}>
+            <Link to={`country/${country?.name?.common}`}>
               <div
                 key={country?.fifa}
                 className="bg-white dark:bg-gray-700 dark:text-white shadow-md m-4 pb-1 ease-in transition-all duration-75"
@@ -67,15 +67,17 @@ export default function Home() {
                   <p className="font-medium text-lg mb-2">{country?.name?.common}</p>
                   <div className="flex text-gray-700 dark:text-white ease-in transition-all duration-75">
                     <p className="font-medium mr-1">Population:</p>
-                    <p className="">{country?.population?.toLocaleString('en-US')}</p>
+                    <p className="text-gray-800 dark:text-gray-200">
+                      {country?.population?.toLocaleString('en-US')}
+                    </p>
                   </div>
                   <div className="flex text-gray-700 dark:text-white ease-in transition-all duration-75">
                     <p className="font-medium mr-1">Region:</p>
-                    <p className="">{country?.continents}</p>
+                    <p className="text-gray-800 dark:text-gray-200">{country?.continents}</p>
                   </div>
                   <div className="flex text-gray-700 dark:text-white ease-in transition-all duration-75">
                     <p className="font-medium mr-1">Capital:</p>
-                    <p className="">{country?.capital}</p>
+                    <p className="text-gray-800 dark:text-gray-200">{country?.capital}</p>
                   </div>
                 </div>
               </div>
