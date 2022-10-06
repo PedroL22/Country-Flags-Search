@@ -8,9 +8,10 @@ A simple website for country searching made with React JS, Tailwind CSS and REST
 -Responsive design <br />
 
 https://country-flags-search.vercel.app/
-![sc1](https://user-images.githubusercontent.com/40894497/194185749-6b939ee3-b4bb-4b4e-95ef-6da4a268f37d.PNG)
-![sc2](https://user-images.githubusercontent.com/40894497/194186001-9a28a9e8-a39f-4ff0-80b2-f0c79a305e7f.PNG)
-![image](https://user-images.githubusercontent.com/40894497/194186078-9ae08ecc-59e6-4172-a049-7cbb08c2a011.png)
-![image](https://user-images.githubusercontent.com/40894497/194186160-2b846712-eae3-4236-a7ac-1a8d307f27b4.png)
+
+![2](https://user-images.githubusercontent.com/40894497/194392787-682d99dc-ad31-49a6-8213-036261518ab1.jpg)
+![1](https://user-images.githubusercontent.com/40894497/194392805-6c85c410-224c-4810-af57-4536dcab9759.jpg)
+![4](https://user-images.githubusercontent.com/40894497/194392812-b79af0d8-2cea-48e7-8507-e5bbd47835ab.jpg)
+![3](https://user-images.githubusercontent.com/40894497/194392823-904e5c08-c095-4913-ad43-4dcbdb3e7038.jpg)
 
 
