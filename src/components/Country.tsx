@@ -7,11 +7,11 @@ export default function Country() {
   const { name } = useParams();
   const [country, setCountry] = useState(null);
 
-  useEffect(() => {
-    axios.get(`https://restcountries.com/v3.1/name/${name}`).then((response) => {
-      setCountry(response.data);
-    });
-  }, []);
+    useEffect(() => {
+      axios.get(`https://restcountries.com/v3.1/name/${name}`).then((response) => {
+        setCountry(response.data);
+      });
+    }, []);
 
   return (
     <div className="tablet:max-w-screen-xl mx-auto min-h-screen tablet:pt-28 pt-20">
