@@ -1,5 +1,5 @@
 # Country Flags Search
-A simple website for country searching made with React JS, Tailwind CSS and REST Countries API.
+A website for country searching made with React JS, Tailwind CSS and Tanstack Query.
 
 **MAIN FEATURES** <br />
 -API data from [REST Countries](https://restcountries.com/) <br />
