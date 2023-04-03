@@ -1,9 +1,21 @@
-import React, { useContext, createContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
-const ThemeContext = createContext()
+interface ThemeContextType {
+  theme: string
+  setTheme: React.Dispatch<React.SetStateAction<string>>
+}
 
-export default function ThemeContextProvider({ children }) {
-  const [theme, setTheme] = useState(
+const ThemeContext = createContext<ThemeContextType>({
+  theme: 'light',
+  setTheme: () => {},
+})
+
+export default function ThemeContextProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const [theme, setTheme] = useState<string>(
     localStorage.getItem('theme') !== 'dark' ? 'light' : 'dark'
   )
 
@@ -24,6 +36,6 @@ export default function ThemeContextProvider({ children }) {
   )
 }
 
-export function useTheme() {
-  return useContext(ThemeContext)
+export function useTheme(): ThemeContextType {
+  return useContext<ThemeContextType>(ThemeContext)
 }

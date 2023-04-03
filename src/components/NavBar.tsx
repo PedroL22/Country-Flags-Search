@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { BsSunFill, BsFillMoonFill } from 'react-icons/bs'
 
 import { useTheme } from '../hooks/useTheme'
@@ -16,10 +14,7 @@ export default function NavBar() {
         >
           <h1 className='font-medium text-xl'>Country Search</h1>
         </a>
-        <a
-          href=''
-          className='flex my-auto'
-        >
+        <div className='flex my-auto cursor-pointer'>
           {theme === 'light' ? (
             <BsFillMoonFill
               onClick={() => setTheme('dark')}
@@ -32,7 +27,7 @@ export default function NavBar() {
               className='font-medium text-xl ease-in transition-all duration-75'
             />
           )}
-        </a>
+        </div>
       </nav>
     </div>
   )
