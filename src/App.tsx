@@ -1,24 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes } from './routes'
+
 import NavBar from './components/NavBar'
-import Home from './components/Home'
-import Country from './components/Country'
+
+import Home from './pages/Home'
+import Country from './pages/CountryDetails'
 
 function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route
-          path='/'
-          element={<Home />}
-        />
-        <Route
-          path='country/:name'
-          element={<Country />}
-        />
-      </Routes>
-    </BrowserRouter>
-  )
+  return <Routes />
 }
 
 export default App

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import axios from 'axios'
+
 import { IoIosArrowRoundBack } from 'react-icons/io'
 
-export default function Country() {
+export default function CountryDetails() {
   const { name } = useParams()
   const [country, setCountry] = useState(null)
 
