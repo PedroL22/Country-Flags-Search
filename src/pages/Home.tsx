@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { CountryType } from '../entities/CountryEntity'
 
 export default function Home() {
   const [api, setApi] = useState(['https://restcountries.com/v3.1/all'])
@@ -55,7 +56,7 @@ export default function Home() {
       )}
       <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4'>
         {api.length > 2 &&
-          api.map((country) => (
+          api.map((country: CountryType) => (
             <Link to={`country/${country?.name?.common}`}>
               <div
                 key={country?.fifa}

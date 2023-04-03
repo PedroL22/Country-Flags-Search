@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 
+import { SpecificCountry } from '../entities/CountryEntity'
+
 import { IoIosArrowRoundBack } from 'react-icons/io'
 
 export default function CountryDetails() {
   const { name } = useParams()
-  const [country, setCountry] = useState(null)
+  const [country, setCountry] = useState<SpecificCountry>()
 
   useEffect(() => {
     axios
@@ -28,7 +30,7 @@ export default function CountryDetails() {
         <div className='tablet:flex tablet:mx-auto max-w-screen-lg tablet:justify-between tablet:my-16 my-4'>
           <img
             src={country[0].flags?.png}
-            alt={country?.name?.common}
+            alt={country[0].name?.common}
             className='flex tablet:mx-0 mx-auto object-cover rounded-lg  tablet:h-80 tablet:w-[32rem] h-40 w-64 tablet:ml-4 mb-5'
           />
           <div className='bg-white rounded-lg  dark:bg-gray-700 my-auto mx-auto max-w-[16rem] tablet:max-w-md px-16 tablet:py-24 py-16'>
