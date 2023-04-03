@@ -1,83 +1,93 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Home() {
-  const [api, setApi] = useState(['https://restcountries.com/v3.1/all']);
+  const [api, setApi] = useState(['https://restcountries.com/v3.1/all'])
 
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState()
 
   const showData = useEffect(() => {
     const fetchData = () => {
       axios.get(api).then((res) => {
-        setApi(res.data);
-      });
-    };
-    fetchData();
-  });
+        setApi(res.data)
+      })
+    }
+    fetchData()
+  })
 
   const reset = () => {
     axios.get('https://restcountries.com/v3.1/all').then((res) => {
-      setApi(res.data);
-      console.log(api);
-    });
-  };
+      setApi(res.data)
+      console.log(api)
+    })
+  }
 
   const search = () => {
     if (query.length === 0) {
-      reset();
+      reset()
     } else {
-      setApi([`https://restcountries.com/v3.1/name/${query}`]);
-      console.log(api);
+      setApi([`https://restcountries.com/v3.1/name/${query}`])
+      console.log(api)
     }
-  };
+  }
 
   return (
-    <div className="xl:max-w-screen-xl mx-auto min-h-screen">
-      <div className="xl:ml-4 pt-20">
+    <div className='xl:max-w-screen-xl mx-auto min-h-screen'>
+      <div className='xl:ml-4 pt-20'>
         <input
-          type="text"
-          placeholder="Search for a country..."
+          type='text'
+          placeholder='Search for a country...'
           onChange={(e) => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
-          className="flex xl:mx-0 mx-auto py-4 pl-4 pr-36 rounded-lg outline-0 border border-gray-200 focus:border focus:border-gray-400 text-gray-500 dark:bg-gray-700 dark:border-gray-800 dark:focus:border-gray-500 dark:text-gray-300 dark:focus:text-gray-300 ease-in transition-all duration-75"
+          className='flex xl:mx-0 mx-auto py-4 pl-4 pr-36 rounded-lg outline-0 border border-gray-200 focus:border focus:border-gray-400 text-gray-500 dark:bg-gray-700 dark:border-gray-800 dark:focus:border-gray-500 dark:text-gray-300 dark:focus:text-gray-300 ease-in transition-all duration-75'
         />
       </div>
       {api.length < 2 && (
         <div>
-          <img src="/loading-buffering.gif" alt="loading" className="flex mx-auto w-24 mt-[25vh]" />
+          <img
+            src='/loading-buffering.gif'
+            alt='loading'
+            className='flex mx-auto w-24 mt-[25vh]'
+          />
         </div>
       )}
-      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4">
-        {api.length > 2
-          && api.map((country) => (
+      <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4'>
+        {api.length > 2 &&
+          api.map((country) => (
             <Link to={`country/${country?.name?.common}`}>
               <div
                 key={country?.fifa}
-                className="bg-white dark:bg-gray-700 dark:text-white shadow-md m-4 pb-1 ease-in transition-all duration-75"
+                className='bg-white dark:bg-gray-700 dark:text-white shadow-md m-4 pb-1 ease-in transition-all duration-75'
               >
                 <img
                   src={country?.flags?.png}
                   alt={country?.name?.common}
-                  className="flex mx-auto object-cover h-[13rem] w-full"
+                  className='flex mx-auto object-cover h-[13rem] w-full'
                 />
 
-                <div className="m-4">
-                  <p className="font-medium text-lg mb-2">{country?.name?.common}</p>
-                  <div className="flex text-gray-700 dark:text-white ease-in transition-all duration-75">
-                    <p className="font-medium mr-1">Population:</p>
-                    <p className="text-gray-800 dark:text-gray-200">
+                <div className='m-4'>
+                  <p className='font-medium text-lg mb-2'>
+                    {country?.name?.common}
+                  </p>
+                  <div className='flex text-gray-700 dark:text-white ease-in transition-all duration-75'>
+                    <p className='font-medium mr-1'>Population:</p>
+                    <p className='text-gray-800 dark:text-gray-200'>
                       {country?.population?.toLocaleString('en-US')}
                     </p>
                   </div>
-                  <div className="flex text-gray-700 dark:text-white ease-in transition-all duration-75">
-                    <p className="font-medium mr-1">Region:</p>
-                    <p className="text-gray-800 dark:text-gray-200">{country?.continents}</p>
+                  <div className='flex text-gray-700 dark:text-white ease-in transition-all duration-75'>
+                    <p className='font-medium mr-1'>Region:</p>
+                    <p className='text-gray-800 dark:text-gray-200'>
+                      {country?.continents}
+                    </p>
                   </div>
-                  <div className="flex text-gray-700 dark:text-white ease-in transition-all duration-75">
-                    <p className="font-medium mr-1">Capital:</p>
-                    <p className="text-gray-800 dark:text-gray-200">{country?.capital}</p>
+                  <div className='flex text-gray-700 dark:text-white ease-in transition-all duration-75'>
+                    <p className='font-medium mr-1'>Capital:</p>
+                    <p className='text-gray-800 dark:text-gray-200'>
+                      {country?.capital}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -85,5 +95,5 @@ export default function Home() {
           ))}
       </div>
     </div>
-  );
+  )
 }
