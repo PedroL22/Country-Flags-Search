@@ -1,6 +1,6 @@
 import { BsSunFill, BsFillMoonFill } from 'react-icons/bs'
 
-import { useTheme } from '../hooks/useTheme'
+import { useTheme } from '../../hooks/useTheme'
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme()

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes as ProjectRoutes, Route } from 'react-router-dom'
 
-import { Navbar } from '../components'
+import { Navbar } from '../components/Navbar'
 
 import { Home } from '../pages/Home'
 import { CountryDetails } from '../pages/CountryDetails'
