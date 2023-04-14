@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes as ProjectRoutes, Route } from 'react-router-dom'
 
-import Home from '../pages/Home'
-import CountryDetails from '../pages/CountryDetails'
+import { Navbar } from '../components'
 
-import NavBar from '../components/NavBar'
+import { Home } from '../pages/Home'
+import { CountryDetails } from '../pages/CountryDetails'
 
 export const Routes = () => {
   return (
     <BrowserRouter>
-      <NavBar />
+      <Navbar />
       <ProjectRoutes>
         <Route
           path='/'

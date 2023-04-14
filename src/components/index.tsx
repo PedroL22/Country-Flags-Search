@@ -2,7 +2,7 @@ import { BsSunFill, BsFillMoonFill } from 'react-icons/bs'
 
 import { useTheme } from '../hooks/useTheme'
 
-export default function NavBar() {
+export const Navbar = () => {
   const { theme, setTheme } = useTheme()
 
   return (

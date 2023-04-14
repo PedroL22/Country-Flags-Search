@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { useFetchAllCountries } from '../hooks/useQueryCountries'
+import { useFetchAllCountries } from '../../hooks/useQueryCountries'
 
-export default function Home() {
+export const Home = () => {
   const { data, isLoading } = useFetchAllCountries()
   const [query, setQuery] = useState('')
 

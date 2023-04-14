@@ -1,9 +1,9 @@
 import { Link, useParams } from 'react-router-dom'
 
 import { IoIosArrowRoundBack } from 'react-icons/io'
-import { useFetchCountryDetails } from '../hooks/useQueryCountries'
+import { useFetchCountryDetails } from '../../hooks/useQueryCountries'
 
-export default function CountryDetails() {
+export const CountryDetails = () => {
   const { name } = useParams()
 
   const { data, isLoading } = useFetchCountryDetails(String(name))
@@ -36,7 +36,7 @@ export default function CountryDetails() {
             alt={data[0].name?.common}
             className='flex tablet:mx-0 mx-auto object-cover rounded-lg  tablet:h-80 tablet:w-[32rem] h-40 w-64 tablet:ml-4 mb-5'
           />
-          <div className='bg-white rounded-lg  dark:bg-gray-700 my-auto mx-auto max-w-[16rem] tablet:max-w-md px-16 tablet:py-24 py-16'>
+          <div className='bg-white rounded-lg dark:bg-gray-700 my-auto mx-auto max-w-[16rem] tablet:max-w-md px-16 tablet:py-24 py-16'>
             <h1 className='dark:text-white font-medium text-xl mb-3 -ml-5'>
               {data[0].name?.common}
             </h1>

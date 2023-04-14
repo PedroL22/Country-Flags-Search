@@ -1,13 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
-interface ThemeContextType {
+type ThemeContextType = {
   theme: string
   setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: 'light',
-  setTheme: () => {},
+  setTheme: () => {
+    ;[]
+  },
 })
 
 export default function ThemeContextProvider({
