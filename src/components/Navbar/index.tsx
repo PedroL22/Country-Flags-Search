@@ -6,25 +6,25 @@ export const Navbar = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className='bg-white dark:bg-gray-700 shadow-sm fixed w-screen ease-in transition-all duration-75'>
-      <nav className='h-16 xl:max-w-screen-xl flex mx-auto justify-between px-4 dark:text-white ease-in transition-all duration-75'>
+    <div className='fixed w-screen bg-white shadow-sm transition-all duration-75 ease-in dark:bg-gray-700'>
+      <nav className='mx-auto flex h-16 justify-between px-4 transition-all duration-75 ease-in dark:text-white xl:max-w-screen-xl'>
         <a
           href='/'
-          className='flex my-auto'
+          className='my-auto flex'
         >
-          <h1 className='font-medium text-xl'>Country Search</h1>
+          <h1 className='text-xl font-medium'>Country Search</h1>
         </a>
-        <div className='flex my-auto cursor-pointer'>
+        <div className='my-auto flex cursor-pointer'>
           {theme === 'light' ? (
             <BsFillMoonFill
               onClick={() => setTheme('dark')}
-              className='font-medium text-xl ease-in transition-all duration-75'
+              className='text-xl font-medium transition-all duration-75 ease-in'
             />
           ) : (
             <BsSunFill
               onClick={() => setTheme('light')}
               size={25}
-              className='font-medium text-xl ease-in transition-all duration-75'
+              className='text-xl font-medium transition-all duration-75 ease-in'
             />
           )}
         </div>

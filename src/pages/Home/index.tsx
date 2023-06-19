@@ -20,29 +20,32 @@ export const Home = () => {
         <img
           src='/loading-buffering.gif'
           alt='loading'
-          className='flex mx-auto w-24 pt-[25vh]'
+          className='mx-auto flex w-24 pt-[25vh]'
         />
       </div>
     )
   }
 
   return (
-    <div className='xl:max-w-screen-xl mx-auto min-h-screen'>
-      <div className='xl:ml-4 pt-20'>
+    <div className='mx-auto min-h-screen xl:max-w-screen-xl'>
+      <div className='pt-20 xl:ml-4'>
         {
           <input
             type='text'
             placeholder='Search for a country...'
             onChange={(e) => setQuery(e.target.value)}
             value={query}
-            className='flex xl:mx-0 mx-auto py-4 pl-4 pr-36 rounded-lg outline-0 border border-gray-200 focus:border focus:border-gray-400 text-gray-500 dark:bg-gray-700 dark:border-gray-800 dark:focus:border-gray-500 dark:text-gray-300 dark:focus:text-gray-300 ease-in transition-all duration-75'
+            className='mx-auto flex rounded-lg border border-gray-200 py-4 pl-4 pr-36 text-gray-500 outline-0 transition-all duration-75 ease-in focus:border focus:border-gray-400 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300 dark:focus:border-gray-500 dark:focus:text-gray-300 xl:mx-0'
           />
         }
       </div>
 
-      <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-4'>
+      <div className='grid grid-cols-1 pt-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4'>
         {countriesSearched.map((country) => (
-          <CountryCard country={country} />
+          <CountryCard
+            country={country}
+            key={country.name.common}
+          />
         ))}
       </div>
     </div>

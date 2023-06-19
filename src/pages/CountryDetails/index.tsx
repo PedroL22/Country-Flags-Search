@@ -14,33 +14,33 @@ export const CountryDetails = () => {
         <img
           src='/loading-buffering.gif'
           alt='loading'
-          className='flex mx-auto w-24 pt-[25vh]'
+          className='mx-auto flex w-24 pt-[25vh]'
         />
       </div>
     )
   }
 
   return (
-    <div className='tablet:max-w-screen-xl mx-auto min-h-screen tablet:pt-28 pt-20'>
+    <div className='mx-auto min-h-screen pt-20 tablet:max-w-screen-xl tablet:pt-28'>
       <Link to='/'>
-        <button className='flex px-8 py-2 ml-4 bg-white text-lg dark:text-white dark:bg-gray-700 rounded-md ease-in transition-all duration-75'>
+        <button className='ml-4 flex rounded-md bg-white px-8 py-2 text-lg transition-all duration-75 ease-in dark:bg-gray-700 dark:text-white'>
           <IoIosArrowRoundBack size={30} />
           Back
         </button>
       </Link>
 
       {data && (
-        <div className='tablet:flex tablet:mx-auto max-w-screen-lg tablet:justify-between tablet:my-16 my-4'>
+        <div className='my-4 max-w-screen-lg tablet:mx-auto tablet:my-16 tablet:flex tablet:justify-between'>
           <img
             src={data[0].flags?.png}
             alt={data[0].name?.common}
-            className='flex tablet:mx-0 mx-auto object-cover rounded-lg  tablet:h-80 tablet:w-[32rem] h-40 w-64 tablet:ml-4 mb-5'
+            className='mx-auto mb-5 flex h-40 w-64  rounded-lg object-cover tablet:mx-0 tablet:ml-4 tablet:h-80 tablet:w-[32rem]'
           />
-          <div className='bg-white rounded-lg dark:bg-gray-700 my-auto mx-auto max-w-[16rem] tablet:max-w-md px-16 tablet:py-24 py-16'>
-            <h1 className='dark:text-white font-medium text-xl mb-3 -ml-5'>
+          <div className='mx-auto my-auto max-w-[16rem] rounded-lg bg-white px-16 py-16 dark:bg-gray-700 tablet:max-w-md tablet:py-24'>
+            <h1 className='-ml-5 mb-3 text-xl font-medium dark:text-white'>
               {data[0].name?.common}
             </h1>
-            <div className='flex mx-auto -ml-5'>
+            <div className='mx-auto -ml-5 flex'>
               <div className='mr-5'>
                 <h2 className='text-gray-800 dark:text-gray-200'>
                   <span className='font-medium'>Population: </span>

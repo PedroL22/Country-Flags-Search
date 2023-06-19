@@ -3,6 +3,7 @@ import { SpecificCountry } from '../../entities/CountryEntity'
 
 type CountryCardProps = {
   country: SpecificCountry
+  key?: string
 }
 
 export const CountryCard = ({ country }: CountryCardProps) => {
@@ -13,30 +14,30 @@ export const CountryCard = ({ country }: CountryCardProps) => {
     >
       <div
         key={country?.fifa}
-        className='bg-white dark:bg-gray-700 dark:text-white shadow-md m-4 pb-1 ease-in transition-all duration-75'
+        className='m-4 bg-white pb-1 shadow-md transition-all duration-75 ease-in dark:bg-gray-700 dark:text-white'
       >
         <img
           src={country?.flags?.png}
           alt={country?.name?.common}
-          className='flex mx-auto object-cover h-[13rem] w-full'
+          className='mx-auto flex h-[13rem] w-full object-cover'
         />
 
         <div className='m-4'>
-          <p className='font-medium text-lg mb-2'>{country?.name?.common}</p>
-          <div className='flex text-gray-700 dark:text-white ease-in transition-all duration-75'>
-            <p className='font-medium mr-1'>Population:</p>
+          <p className='mb-2 text-lg font-medium'>{country?.name?.common}</p>
+          <div className='flex text-gray-700 transition-all duration-75 ease-in dark:text-white'>
+            <p className='mr-1 font-medium'>Population:</p>
             <p className='text-gray-800 dark:text-gray-200'>
               {country?.population?.toLocaleString('en-US')}
             </p>
           </div>
-          <div className='flex text-gray-700 dark:text-white ease-in transition-all duration-75'>
-            <p className='font-medium mr-1'>Region:</p>
+          <div className='flex text-gray-700 transition-all duration-75 ease-in dark:text-white'>
+            <p className='mr-1 font-medium'>Region:</p>
             <p className='text-gray-800 dark:text-gray-200'>
               {country?.continents}
             </p>
           </div>
-          <div className='flex text-gray-700 dark:text-white ease-in transition-all duration-75'>
-            <p className='font-medium mr-1'>Capital:</p>
+          <div className='flex text-gray-700 transition-all duration-75 ease-in dark:text-white'>
+            <p className='mr-1 font-medium'>Capital:</p>
             <p className='text-gray-800 dark:text-gray-200'>
               {country?.capital}
             </p>
